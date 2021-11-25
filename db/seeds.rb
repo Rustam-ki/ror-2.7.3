@@ -9,7 +9,6 @@
 users = User.create!([
                        { name: 'Tom', email: 'tom@example.com', first_name: 'Tom', last_name: 'Hanks', password: 'secretus' },
                        { name: 'Adamas', email: 'adamas@example.com', first_name: 'Adamas', last_name: 'Monti', password: 'secretus', type: 'Admin' }
-                     # { name: 'Mikhail', email: 'm52d8c1@gmail.com', first_name: 'Mikhail', last_name: 'Moldavskiy', password: 'Qwerty123', type: 'Admin' },
                      ])
 
 categories = Category.create!([
@@ -19,11 +18,11 @@ categories = Category.create!([
                               ])
 
 tests = Test.create!([
-                       { title: 'HTML', level: 3, category_id: categories[0].id},
-                       { title: 'CSS', level: 2, category_id: categories[0].id},
-                       { title: 'JS', level: 1, category_id: categories[1].id},
-                       { title: 'PHP', level: 1, category_id: categories[1].id},
-                       { title: 'Java', level: 3, category_id: categories[1].id}
+                       { title: 'HTML', level: 3, category_id: categories[0].id },
+                       { title: 'CSS', level: 2, category_id: categories[0].id },
+                       { title: 'JS', level: 1, category_id: categories[1].id },
+                       { title: 'PHP', level: 1, category_id: categories[1].id },
+                       { title: 'Java', level: 3, category_id: categories[1].id }
                      ])
 
 questions = Question.create!([
@@ -35,9 +34,14 @@ questions = Question.create!([
                              ])
 
 answers = Answer.create!([
-                           { correct: true, body: 'An HTML form is used to collect user input', question_id: questions[0].id},
-                           { correct: true, body: 'Margins are used to create space around elements, outside of any defined borders.', question_id: questions[1].id},
-                           { correct: true, body: "A cookie is a small file that the server embeds on the user's computer.", question_id: questions[4].id},
-                           { correct: true, body: 'This is a difficult question.', question_id: questions[2].id},
+                           { correct: true, body: 'An HTML form is used to collect user input', question_id: questions[0].id },
+                           { correct: true, body: 'Margins are used to create space around elements, outside of any defined borders.', question_id: questions[1].id },
+                           { correct: true, body: "A cookie is a small file that the server embeds on the user's computer.", question_id: questions[4].id },
+                           { correct: true, body: 'This is a difficult question.', question_id: questions[2].id },
                            { correct: true, body: 'I know methods as length(), concat() and charAt().', question_id: questions[3].id }
                          ])
+
+
+
+
+
