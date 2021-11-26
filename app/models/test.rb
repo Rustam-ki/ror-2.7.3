@@ -1,9 +1,7 @@
 class Test < ApplicationRecord
+  belongs_to :category
 
-  scope :test_names, -> (category_title) { joins(:category)
-                                             .where(categories: { title: category_title }) }
-
-  def self.test_names_title(category_title)
-    test_names(category_title).order(title: :desc).pluck(:title)
+  def self.desc_category_title(category_title)
+    joins("INNER JOIN categories ON tests.category_id = categories.id").where(categories: {title: category_title}).order(title: :desc).pluck(:title)
   end
 end
