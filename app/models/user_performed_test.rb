@@ -1,0 +1,2 @@
+class UserPerformedTest < ApplicationRecord
+end
