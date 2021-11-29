@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
 
-  def self.sort_category_title(category_title)
+  def self.all_with_category_array(category_title)
     joins('JOIN categories ON tests.category_id = categories.id')
       .where(categories: {title: category_title})
       .order(title: :desc)
