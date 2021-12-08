@@ -18,11 +18,11 @@ categories = Category.create!([
                               ])
 
 tests = Test.create!([
-                       { title: 'HTML', level: 3, category_id: categories[0].id },
-                       { title: 'CSS', level: 2, category_id: categories[0].id },
-                       { title: 'JS', level: 1, category_id: categories[1].id },
-                       { title: 'PHP', level: 1, category_id: categories[1].id },
-                       { title: 'Java', level: 3, category_id: categories[1].id }
+                       { title: 'HTML', level: 3, category_id: categories[0].id, user_id: users[0].id },
+                       { title: 'CSS', level: 2, category_id: categories[0].id, user_id: users[0].id },
+                       { title: 'JS', level: 1, category_id: categories[1].id, user_id: users[0].id },
+                       { title: 'PHP', level: 1, category_id: categories[1].id, user_id: users[0].id },
+                       { title: 'Java', level: 3, category_id: categories[1].id, user_id: users[0].id }
                      ])
 
 questions = Question.create!([
