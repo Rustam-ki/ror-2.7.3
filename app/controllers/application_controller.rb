@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery with: :exception
 
   add_flash_types :danger, :info, :warning, :success
@@ -13,8 +14,6 @@ class ApplicationController < ActionController::Base
       cookies[:user_request_path] = request.path
       redirect_to login_path
     end
-
-    cookies[:email] = current_user&.email
   end
 
   def current_user
