@@ -26,6 +26,7 @@ tests = Test.create!([
 
 questions = Question.create!([
                                { body: 'What do you know about html forms?', test_id: tests[0].id },
+                               { body: '2What do you know about html forms?', test_id: tests[0].id },
                                { body: 'What can you say about margins?', test_id: tests[1].id },
                                { body: 'What do you think about php cookies?', test_id: tests[4].id },
                                { body: 'Is it true JS - the most popular language?', test_id: tests[2].id },
