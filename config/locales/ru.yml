@@ -1,0 +1,156 @@
+ru:
+  hello: "Привет мир"
+
+  helpers:
+    prompt:
+      select: "Выберите"
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
+    label:
+      test:
+        title: "Заголовок"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        body: "Введите вопрос: "
+      answer:
+        body: "Введите ответ: "
+        correct: "Правильный ответ: "
+    signup: "Зарегистрироваться"
+    login: "Вход"
+    forgot_your_password: "Забыли пароль?"
+    edit: "Редактировать"
+    back: "Назад"
+    new_test: "Новый тест"
+    show: "Смотреть"
+    delete: "Удалить"
+    delete_confirmation: "Вы уверены?"
+    welcome: "Добро пожаловать"
+    logout: "Выход"
+    hello: "Привет"
+    non_auth: "У вас нет прав для просмотра этой страницы"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    footer:
+      author: "Автор: "
+      year: "Год: "
+      git: "Github: "
+      link: "Ссылка: "
+    nav:
+      header: "Панель пользователя TestGuru"
+
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Заголовок"
+      level: "Уровень"
+      count: "Количество вопросов"
+      action: "Действие"
+    test:
+      start: "Старт"
+
+  admin:
+    nav:
+      header: "Панель администратора TestGuru"
+    tests:
+      index:
+        header: "Доступные тесты"
+        title: "Заголовок"
+        level: "Уровень"
+        count: "Количество вопросов"
+        actions: "Действия"
+      create:
+        success: "Тест успешно создан"
+      update:
+        update_success: "Тест успешно обновлен"
+      new:
+        header: "Создать новый тест"
+      show:
+        title: "Заголовок: "
+        level: "Уровень: "
+        questions: "Вопросы: "
+        id: "Номер"
+        body: "Вопрос"
+        actions: "Действия"
+      edit:
+        edit: "Редактировать тест: %{title}"
+    questions:
+      new:
+        header: "Создать новый вопрос"
+      show:
+        id: "Номер: "
+        body: "Вопрос: "
+        answers: "Ответы: "
+        question: "Вопрос"
+        new_answer: "Новый ответ"
+      edit:
+        edit: "Редактировать вопрос: %{body}"
+      create:
+        success: "Вопрос успешно создан"
+      update:
+        update_success: "Вопрос успешно обновлен"
+      destroy:
+        delete: "Вопрос удален"
+
+    answers:
+      new:
+        header: "Новый ответ"
+      show:
+        header: "Вопрос"
+        answer: "Ответ: "
+        correct: "Правильный ответ: "
+      edit:
+        edit: "Редактировать ответ"
+      create:
+        success: "Ответ успешно создан"
+      update:
+        update_success: "Ответ успешно обновлен"
+      destroy:
+        delete: "Ответ удален"
+
+  test_passages:
+    result:
+      header: "Тест %{title} завершен"
+      success: "Тест успешно завершен"
+      fail: "Тест не пройден"
+      back_to_tests: "К списку тестов"
+    show:
+      header: "Прохождение теста %{title}"
+      total_questions: "Всего вопросов: %{count}"
+      current_question: "Номер текущего вопроса: %{number}"
+      of: "из"
+      next: "Следующий"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
+
+  devise:
+    registrations:
+      new:
+        header: "Стать Гуру"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        password_characters_min: "символов минимум"
+    sessions:
+      new:
+        header: "Войти в Гуру"
+        email: "Почта"
+        password: "Пароль"
+        remember_me: "Запомнить меня"

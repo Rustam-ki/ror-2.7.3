@@ -1,9 +1,7 @@
 <% unless user_signed_in? %>
-  <h1><%= link_to 'TestGuru', root_path %></h1>
+  <h1><%= link_to t('.header'), root_path %></h1>
 
-  <%#= link_to 'Sign up', signup_path %>
-  <%#= link_to 'Sign in', login_path %>
 <% else %>
-  <p>Welcome, <%= current_user.email %></p>
-  <%= link_to 'Exit', session_path(session), method: :delete %>
+  <p><%= t('helpers.welcome') %> <%= current_user.email %></p>
+  <%= link_to t('helpers.logout'), session_path(session), method: :delete %>
 <% end %>
