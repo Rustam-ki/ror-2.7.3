@@ -15,7 +15,7 @@ class TestPassagesController < ApplicationController
     result = response.call
     @gist = current_user.gists.new(gist_url: result.html_url, user_id: current_user.id, question_id: @test_passage.current_question.id)
 
-    flash_options = response.success? && @gist.save ? { notice: t('.success')} : { alert: t('.failure')}
+    flash_options = response.success? && @gist.save ? { notice: t('.success', link_gist: link_gist(result))} : { alert: t('.failure')}
 
     redirect_to @test_passage, flash_options
   end
@@ -32,6 +32,10 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def link_gist(gist)
+    view_context.link_to('Gist', gist.html_url, target: '_blank')
+  end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
