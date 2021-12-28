@@ -1,4 +1,11 @@
 module ApplicationHelper
+
+  FLASH_TYPES = {
+    notice: 'alert-info',
+    error: 'alert-danger',
+    success: 'alert-success'
+  }
+
   def current_year
     Date.current.year
   end
@@ -8,9 +15,7 @@ module ApplicationHelper
   end
 
   def flash_messages
-    flash.each do |key, message|
-      tag.div class: "alert alert-#{key}"
-      return message
-    end
+    content_tag :div, flash[type] ,class: "alert #{FLASH_TYPES.fetch(type.to_sym, type)}"
   end
 end
+

@@ -38,6 +38,7 @@ en:
     logout: "Log out"
     hello: "Hey"
     non_auth: "You are not authorized to view this page"
+    home_page: "Admin panel"
 
   shared:
     errors:
