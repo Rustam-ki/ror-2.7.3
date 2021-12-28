@@ -155,3 +155,7 @@ en:
         header: "Enter the Guru Gates"
         password: "Password"
         remember_me: "Remember me"
+  gists:
+    create:
+      success: "Good!"
+      failure: "Error"

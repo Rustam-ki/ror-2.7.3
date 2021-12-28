@@ -1,9 +1,9 @@
 class GistQuestionService
 
-  def initialize(question, client = default_client)
+  def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = client
+    @client = client || Octokit::Client.new(:access_token => ENV['GIT_TOKEN'])
   end
 
   def call
@@ -19,6 +19,7 @@ class GistQuestionService
   def gist_params
     {
       description: "The question about #{@test.title} from TestGuru",
+      public: true,
       files: {
         'test_guru_question.txt' => {
           content: gist_content
@@ -27,21 +28,10 @@ class GistQuestionService
     }
   end
 
-  def default_client
-    Octokit::Client.new(access_token: ENV['ACCESS_TOKEN_GIT_HUB'])
-  end
 
-  def gist_content
-    content = [@question.body, *@question.answers.pluck(:body)].join("\n")
-  end
-
-
-=begin
   def gist_content
     content = [@question.body]
     content += @question.answers.pluck(:body)
     content.join("\n")
   end
-=end
-
 end

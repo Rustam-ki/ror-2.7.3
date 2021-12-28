@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :gists, only: %i[show index]
+
   namespace :admin do
     resources :tests do
       resources :questions, except: :index, shallow: true do

@@ -159,3 +159,7 @@ ru:
         email: "Почта"
         password: "Пароль"
         remember_me: "Запомнить меня"
+  gists:
+    create:
+      success: "Гист успешно сохранен"
+      failure: "Ошибка"

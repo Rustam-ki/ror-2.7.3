@@ -14,7 +14,7 @@ module ApplicationHelper
     link_to 'Click me', "https://github.com/#{author}/#{repo}", target: '_blank'
   end
 
-  def flash_messages
+  def flash_messages(type)
     content_tag :div, flash[type], class: "alert #{FLASH_TYPES[type]}"
   end
 end

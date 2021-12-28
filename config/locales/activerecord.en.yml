@@ -30,7 +30,7 @@ en:
         invalid: 'is invalid'
         taken: 'has already been taken'
   success: "Gist successfully created!"
-  failure: "An ettot occurred while saving gist"
+  failure: "An error occurred while saving gist"
   admin:
     gist:
       index:
