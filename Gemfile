@@ -29,12 +29,18 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise', '~> 4.0'
 
+# NETWORKING
+
+gem 'faraday'
+
+gem 'octokit'
+
 # LOCALIZATION
 
 gem 'rails-i18n', '~> 6.0.0'
 
-gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.3'
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

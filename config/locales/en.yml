@@ -39,6 +39,7 @@ en:
     hello: "Hey"
     non_auth: "You are not authorized to view this page"
     home_page: "Admin panel"
+    gists_list: "All Gists"
 
   shared:
     errors:
@@ -134,6 +135,9 @@ en:
       current_question: "Current question: %{number}"
       of: "of"
       next: "Next"
+    gist:
+      success: "Ok"
+      failure: "An error occured while saving gist"
 
   tests_mailer:
     completed_test:
