@@ -29,3 +29,12 @@ en:
         required: 'must be exist'
         invalid: 'is invalid'
         taken: 'has already been taken'
+  success: "Gist successfully created!"
+  failure: "An error occurred while saving gist"
+  admin:
+    gist:
+      index:
+        header: "Gists"
+        question: "Question"
+        gist_url: "Hash Gist"
+        user: "user email"

@@ -39,6 +39,7 @@ ru:
     hello: "Привет"
     non_auth: "У вас нет прав для просмотра этой страницы"
     home_page: "Панель управления"
+    gists_list: "Список всех Gist"
 
   shared:
     errors:
@@ -137,6 +138,9 @@ ru:
       current_question: "Номер текущего вопроса: %{number}"
       of: "из"
       next: "Следующий"
+    gist:
+      success: "Успешно"
+      failure: "Во время сохранения gist произошла ошибка"
 
   tests_mailer:
     completed_test:
@@ -155,3 +159,7 @@ ru:
         email: "Почта"
         password: "Пароль"
         remember_me: "Запомнить меня"
+  gists:
+    create:
+      success: "Гист успешно сохранен"
+      failure: "Ошибка"

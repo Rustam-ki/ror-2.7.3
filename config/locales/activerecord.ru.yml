@@ -29,3 +29,12 @@ ru:
         required: 'должен существовать'
         invalid: 'не соответствует формату'
         taken: 'уже используется'
+  success: "Гист успешно сохранен"
+  failure: "Во время сохранения гист произошла ошибка"
+  admin:
+    gist:
+      index:
+        header: "Gists"
+        question: "Вопрос"
+        gist_url: "Hash Gist"
+        user: "email пользователя"
