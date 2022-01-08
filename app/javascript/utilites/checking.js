@@ -14,7 +14,9 @@ function confirmPassword() {
         document.querySelector(".octicon-thumbsup").classList.add("hide");
         document.querySelector(".octicon-thumbsdown").classList.add("hide");
         return;
-    } else if (this.value == password.value) {
+    }
+    
+    if (this.value == password.value) {
         document.querySelector(".octicon-thumbsup").classList.remove("hide");
         document.querySelector(".octicon-thumbsdown").classList.add("hide");
         control.classList.add("border-green");
