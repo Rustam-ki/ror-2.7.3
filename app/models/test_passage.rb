@@ -11,6 +11,14 @@ class TestPassage < ApplicationRecord
     test.questions.order(:id).where('id < ?', current_question.id).size + 1
   end
 
+  def passed?
+    result >= SUCCESS_PERCENT
+  end
+
+  def result
+    ((self.correct_questions.to_f / test.questions.count.to_f) * 100).to_i
+  end
+
   def completed?
     current_question.nil?
   end
@@ -19,8 +27,19 @@ class TestPassage < ApplicationRecord
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
-
     save!
+  end
+
+  def current_question_index
+    test.questions.index(current_question)
+  end
+
+  def current_question_number
+    current_question_index + 1
+  end
+
+  def percent_of_progress
+    (current_question_index.to_f / test.questions.count.to_f * 100).to_i
   end
 
   def successfull?

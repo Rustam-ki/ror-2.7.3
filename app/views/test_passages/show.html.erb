@@ -3,7 +3,10 @@
 <b>
   <%= t('.current_question', number: @test_passage.current_question_number) %> <%= t('.of') %> <%= t('.total_questions', count: @test_passage.test.questions.count) %>
 </b>
-
+<div class="progress">
+  <div class="progress-bar bg-success" id="progress-bar" data-progress="<%= @test_passage.percent_of_progress %>" aria-valuemax="100">
+  </div>
+</div>
 
 <p>
   <b><%= @test_passage.current_question.body %></b>

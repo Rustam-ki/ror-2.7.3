@@ -38,3 +38,6 @@ en:
         question: "Question"
         gist_url: "Hash Gist"
         user: "user email"
+    tests:
+      form_inline:
+        submit: "Ok"

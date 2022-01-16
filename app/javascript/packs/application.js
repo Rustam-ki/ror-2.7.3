@@ -14,6 +14,7 @@ import "channels"
 import  "../utilites/sorting"
 import  "../utilites/form_inline"
 import  "../utilites/checking"
+import  "../utilites/progress_bar"
 
 Rails.start()
 Turbolinks.start()

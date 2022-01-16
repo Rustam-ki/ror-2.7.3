@@ -1,37 +1,49 @@
 document.addEventListener("turbolinks:load", function () {
+    let controls = document.querySelectorAll('.form-inline-link')
 
-    $(".form-inline-link").on("click", formInlineLinkHandler);
+    if (controls.length) {
+        for (let i = 0; i < controls.length; i++) {
+            controls[i].addEventListener('click', formInlineLinkHandler)
+        }
+    }
 
-    var errors = document.querySelector(".resource-errors");
 
-    if (errors && controls.length) {
-        var resourceId = errors.dataset.resourceId;
+    //$(".form-inline-link").on("click", formInlineLinkHandler);
+
+    let errors = document.querySelector(".resource-errors");
+
+    if (errors) {
+        let resourceId = errors.dataset.resourceId;
         formInlineHandler(resourceId);
     }
 });
 
 function formInlineLinkHandler(event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    var testId = this.dataset.testId;
+    let testId = this.dataset.testId;
     console.log(testId);
     formInlineHandler(testId);
 }
 
 function formInlineHandler(testId) {
-    var link = document.querySelector(
+    let link = document.querySelector(
         '.form-inline-link[data-test-id="' + testId + '"]'
     );
 
-    var $testTitle = $('.test-title[data-test-id="' + testId + '"]');
-    var $formInline = $('.form-inline[data-test-id="' + testId + '"]');
+    let testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]');
+    let formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]');
 
-    $formInline.toggle();
-    $testTitle.toggle();
+    //$formInline.toggle();
+    //$testTitle.toggle();
 
-    if ($formInline.is(":visible")) {
-        link.textContent = "Cancel";
+    if (formInline.classList.contains('hide')) {
+        testTitle.classList.add('hide')
+        formInline.classList.remove('hide')
+        link.textContent = 'Cancel'
     } else {
-        link.textContent = "Edit";
+        testTitle.classList.remove('hide')
+        formInline.classList.add('hide')
+        link.textContent = 'Edit'
     }
 }
