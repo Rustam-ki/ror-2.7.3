@@ -6,10 +6,14 @@
 //= require popper
 //= require("bootstrap");
 
+
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import  "../utilites/sorting"
+import  "../utilites/form_inline"
+import  "../utilites/checking"
 
 Rails.start()
 Turbolinks.start()

@@ -3,12 +3,16 @@
 <p>
 <p>
   <%= link_to t('helpers.new_test'), new_admin_test_path, class: "btn btn-primary btn-lg" %>
-  <%= link_to t('helpers.gists_list'), admin_gists_path, class: "btn btn-primary btn-lg" %>
+  <%= link_to t('helpers.gists_list'), gists_path, class: "btn btn-primary btn-lg" %>
 </p>
 
 <table class="table table-hover">
-  <tr class="table-primary">
-    <th scope="col" class="sort-by-title pointer text-center"><%= t('.title') %></th>
+  <tr class="table-primary sort-by-title pointer">
+    <th scope="col" class="sort-by-title pointer text-center">
+      <%= t('.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
     <th scope="col" class="text-center"><%= t('.level') %></th>
     <th scope="col" class="text-center"><%= t('.count') %></th>
     <th colspan="3" scope="col" class="text-center"><%= t('.actions') %></th>
