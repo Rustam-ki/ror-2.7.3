@@ -70,6 +70,7 @@ end
 
 group :production do
   gem 'dotenv-rails'
+  gem 'pg'
 end
 
 group :test do
