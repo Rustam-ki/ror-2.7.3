@@ -65,11 +65,12 @@ group :development do
   #gem 'spring'
 
   gem 'letter_opener'
-  
+
 end
 
 group :production do
   gem 'dotenv-rails'
+  gem 'pg'
 end
 
 group :test do
