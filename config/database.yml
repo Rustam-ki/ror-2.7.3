@@ -9,6 +9,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   encoding: unicode
 
+
 development:
   <<: *default
   database: test_guru_development
