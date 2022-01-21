@@ -64,13 +64,13 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'aqueous-beyond-26346.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'hidden-dawn-71925.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     domain: 'gmail.com',
     port: 587,
-    user_name: 'qwertrondell',
+    user_name: 'qwertrondell@gmail.com',
     password: '89656696438rondell',
     authentication: 'plain',
     enable_starttls_auto: true  }
