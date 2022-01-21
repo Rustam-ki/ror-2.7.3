@@ -62,7 +62,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "TestGuru_production"
 
-  config.action_mailer.perform_deliveries = true
+  #config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'hidden-dawn-71925.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
@@ -70,7 +70,7 @@ Rails.application.configure do
     address: 'smtp.gmail.com',
     domain: 'gmail.com',
     port: 587,
-    user_name: 'qwertrondell@gmail.com',
+    user_name: 'qwertrondell',
     password: '89656696438rondell',
     authentication: 'plain',
     enable_starttls_auto: true  }
