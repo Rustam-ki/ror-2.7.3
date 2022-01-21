@@ -68,7 +68,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'hidden-dawn-71925.herokuapp.com' }
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
-    domain: 'gmail.com',
     port: 587,
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
