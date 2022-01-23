@@ -64,7 +64,7 @@ Rails.application.configure do
 
   #config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'hidden-dawn-71925.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'rustam-test-guru.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',

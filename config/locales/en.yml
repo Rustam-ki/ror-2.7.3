@@ -51,6 +51,7 @@ en:
       year: "Year: "
       git: "Github: "
       link: "Link: "
+      feedback: "Feedback"
     nav:
       header: "TestGuru User Panel"
 

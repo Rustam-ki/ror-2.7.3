@@ -53,6 +53,7 @@ ru:
       year: "Год: "
       git: "Github: "
       link: "Ссылка: "
+      feedback: "Обратная связь"
     nav:
       header: "Панель пользователя TestGuru"
 
