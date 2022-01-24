@@ -1,3 +1,4 @@
+=begin
 class Contact < MailForm::Base
   attribute :name
   attribute :email
@@ -10,4 +11,4 @@ class Contact < MailForm::Base
       from: %("#{name}" "#{email}")
     }
   end
-end
+end=end
