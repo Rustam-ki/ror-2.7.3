@@ -7,12 +7,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    if @test.completed
-      current_user.tests.push(@test)
-      redirect_to current_user.test_passage(@test)
-    else
-      redirect_to root_path, warning: 'Нет доступа к тесту!'
-    end
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private

@@ -9,7 +9,6 @@ gem 'pg'
 gem 'dotenv-rails'
 gem 'rack-timeout'
 
-gem 'mail_form'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
