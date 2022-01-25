@@ -41,3 +41,6 @@ en:
     tests:
       form_inline:
         submit: "Ok"
+  feedbacks:
+    create:
+      msg_send: "Message"

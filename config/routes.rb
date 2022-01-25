@@ -30,6 +30,6 @@ Rails.application.routes.draw do
     end
   end
 
-
+  resources :contacts, only: %i[index new create]
   end
 
