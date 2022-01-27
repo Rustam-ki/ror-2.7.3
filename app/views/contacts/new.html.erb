@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Contact Form</h1>
-  <%= form_for @contact do |f| %>
+  <%= form_with do |f| %>
     <div class="col-md-6">
       <%= f.hidden_field  :name, value: current_user.first_name %></br>
 

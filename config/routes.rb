@@ -18,9 +18,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :gists, only: %i[show index]
+  resources :gists, only: :create
 
   namespace :admin do
+    resources :gists, only: :index
     resources :tests do
       patch :update_inline, on: :member
 
@@ -30,6 +31,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts, only: %i[index new create]
+  resources :contacts do
+  member do
+    post :new
   end
+end
+
+end
 

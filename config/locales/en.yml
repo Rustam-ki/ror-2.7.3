@@ -88,6 +88,7 @@ en:
         id: "Id"
         body: "Question"
         actions: "Actions"
+        new_question: "New question"
       edit:
         edit: "Edit test: %{title}"
     questions:

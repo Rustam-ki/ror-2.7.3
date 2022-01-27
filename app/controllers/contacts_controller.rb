@@ -5,26 +5,12 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
-    @contact = Contact.new
-  end
-
-  # POST /contacts or /contacts.json
-  def create
-    @contact = Contact.new(contact_params)
-
-    if @contact.valid?
-      ContactsMailer.contact_form(@contact).deliver_now
-      redirect_to new_contact_path, notice: 'Письмо успешно отправлено!'
-    else
-      flash[:alert] = 'Что-то пошло не так!'
-      render :new
+    message = params[:message]
+    email = params[:email]
+    if message and email
+      ContactsMailer.contact_form(email, message).deliver
+      redirect_to new_contact_path, notice: 'Message sent'
     end
   end
 
-  private
-
-    # Only allow a list of trusted parameters through.
-    def contact_params
-      params.require(:contact).permit(:email, :message)
-    end
 end

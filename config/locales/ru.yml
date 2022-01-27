@@ -91,6 +91,7 @@ ru:
         id: "Номер"
         body: "Вопрос"
         actions: "Действия"
+        new_question: "Новый вопрос"
       edit:
         edit: "Редактировать тест: %{title}"
     questions:
