@@ -5,11 +5,14 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
+
+  end
+
+  def create
     message = params[:message]
     email = params[:email]
-    if message and email
+    if message && email
       ContactsMailer.contact_form(email, message).deliver
-      redirect_to new_contact_path, notice: 'Message sent'
     end
   end
 

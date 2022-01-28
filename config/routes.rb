@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts, only: %i[new create]
 
   root 'tests#index'
 
@@ -31,11 +32,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts do
-  member do
-    post :new
-  end
-end
 
 end
 

@@ -7,12 +7,22 @@ class TestsController < ApplicationController
   end
 
   def start
+
+    if @test.completed
+      current_user.tests.push(@test)
+      redirect_to current_user.test_passage(@test)
+    else
+      redirect_to root_path, warning: 'Нет доступа к тесту!'
+    end
+
+=begin
     if @test.questions.count > 0
       current_user.tests.push(@test)
       redirect_to current_user.test_passage(@test)
     else
       redirect_to root_path, warning: 'Нет доступа к тесту!'
     end
+=end
   end
 
   private
