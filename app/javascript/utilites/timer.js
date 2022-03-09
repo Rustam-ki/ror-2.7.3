@@ -22,7 +22,7 @@ document.addEventListener('turbolinks:load', function() {
             document.getElementById('minutes').innerHTML = min
             sec = 59
         } else {
-            setTimeout(timer, 1000)
+            setInterval(timer, 1000)
         }
     }
 })

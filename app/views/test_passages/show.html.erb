@@ -12,7 +12,7 @@
   <b><%= @test_passage.current_question.body %></b>
 </p>
 
-<%= form_with url: test_passage_path(@test_passage), id: 'navform', method: :put, data: { difference_time: @test_passage.difference_time }   do |form| %>
+<%= form_with url: test_passage_path(@test_passage), id: 'navform', method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids,
                                   @test_passage.current_question.answers, :id, :body,
                                   include_hidden: false do |b| %>
@@ -26,9 +26,10 @@
   <p><%= link_to 'Gist question', gist_test_passage_path(@test_passage), method: :post %></p>
   <p><%= form.submit t('.next') %></p>
 <% end %>
-
-<%= content_tag :div, nil, class: 'timer' do %>
-  <li><span id="minutes"><%= @test_passage.test.timer %></span>Minutes</li>
-  <li><span id="seconds">00</span>Seconds</li>
+<% if @test_passage.test.timer? %>
+  <%= content_tag :div, nil, class: 'timer', data: { difference_time: @test_passage.difference_time } do %>
+    <li><span id="minutes"><%= @test_passage.test.timer %></span>Minutes</li>
+    <li><span id="seconds">00</span>Seconds</li>
+  <% end %>
 <% end %>
 
