@@ -5,8 +5,12 @@ ruby '2.7.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+gem 'pg'
+gem 'dotenv-rails'
+gem 'rack-timeout'
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+#gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -43,14 +47,15 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 gem 'octicons_helper'
-
+gem 'rake'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'dotenv-rails', require: 'dotenv/rails-now'
+
 end
 
 group :development do
@@ -64,8 +69,8 @@ group :development do
   gem 'spring'
 
   gem 'letter_opener'
-
 end
+
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
@@ -73,6 +78,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

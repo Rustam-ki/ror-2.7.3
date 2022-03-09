@@ -2,7 +2,7 @@
 
 <p>
   <%= link_to t('helpers.new_test'), new_admin_test_path, class: "btn btn-primary btn-lg" %>
-  <%= link_to t('helpers.gists_list'), gists_path, class: "btn btn-primary btn-lg" %>
+  <%= link_to t('helpers.gists_list'), admin_gists_path, class: "btn btn-primary btn-lg" %>
 </p>
 
 <%= render 'shared/errors', resource: @test %>

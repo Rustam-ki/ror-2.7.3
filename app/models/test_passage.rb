@@ -34,9 +34,11 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question)
   end
 
+=begin
   def current_question_number
     current_question_index + 1
   end
+=end
 
   def percent_of_progress
     (current_question_index.to_f / test.questions.count.to_f * 100).to_i

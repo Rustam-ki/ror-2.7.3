@@ -51,6 +51,7 @@ en:
       year: "Year: "
       git: "Github: "
       link: "Link: "
+      feedback: "Feedback"
     nav:
       header: "TestGuru User Panel"
 
@@ -87,6 +88,7 @@ en:
         id: "Id"
         body: "Question"
         actions: "Actions"
+        new_question: "New question"
       edit:
         edit: "Edit test: %{title}"
     questions:

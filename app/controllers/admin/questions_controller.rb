@@ -4,9 +4,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def show
-    @question
-  end
+  def show; end
 
   def new
     @question = @test.questions.new
@@ -19,7 +17,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to @question, success: t('.success')
+      redirect_to admin_test_path(@question.test), success: t('.success')
     else
       render :new
     end

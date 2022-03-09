@@ -1,6 +1,6 @@
 class Admin::GistsController < Admin::BaseController
   def index
-    @gists = Gist.all
+    @gists = Gist.order(created_at: :desc)
   end
 
   def show

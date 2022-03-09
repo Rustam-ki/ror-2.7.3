@@ -8,9 +8,14 @@
   <strong><%= t('.level') %></strong>
 </p>
 
-<p>
+
 <h2><%= t('.questions') %></h2>
+
+<%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
+
+<ol>
   <%= render partial: 'admin/questions/question', collection: @test.questions %>
-</p>
+</ol>
+
 <%= link_to t('helpers.edit'), edit_admin_test_path(@test) %>
 <%= link_to t('helpers.back'), admin_tests_path %>
