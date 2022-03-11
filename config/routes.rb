@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :badges, only: :index
+
   resources :contacts, only: %i[new create]
 
   root 'tests#index'
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
   resources :gists, only: :create
 
   namespace :admin do
+    resources :badges
     resources :gists, only: :index
     resources :tests do
       patch :update_inline, on: :member
@@ -31,7 +34,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
 
 end
 

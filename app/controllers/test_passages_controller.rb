@@ -15,7 +15,7 @@ class TestPassagesController < ApplicationController
     result = response.call
     @gist = current_user.gists.new(gist_url: result.html_url, user_id: current_user.id, question_id: @test_passage.current_question.id)
 
-    flash_options = response.success? && @gist.save ? { notice: t('.success', link_gist: link_gist(result))} : { alert: t('.failure')}
+    flash_options = response.success? && @gist.save ? { notice: t('.success', link_gist: link_gist(result)) } : { alert: t('.failure') }
 
     redirect_to @test_passage, flash_options
   end
@@ -24,7 +24,13 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
+
+      @test_passage.update_successfull! if @test_passage.success?
+
+      BadgeService.new(@test_passage).call
+
       TestsMailer.completed_test(@test_passage).deliver_now
+
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
