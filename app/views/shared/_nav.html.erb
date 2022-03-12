@@ -3,6 +3,7 @@
 
   <span class="navbar-text">
     <% if user_signed_in? %>
+      <%= link_to 'My badges', badges_path, class: 'nav-link active' %>
       <%= t('helpers.welcome') %> <b><%= current_user.email %></b> Guru |
       <%= link_to t('helpers.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
