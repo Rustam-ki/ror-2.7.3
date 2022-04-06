@@ -1,0 +1,18 @@
+<h1>Badges</h1>
+
+<p>
+  <%= link_to 'New badge', new_admin_badge_path, class: "btn btn-primary btn-lg" %>
+</p>
+
+<table class="table table-hover">
+  <tbody>
+  <tr class="table-primary">
+    <th class="text-center">Title</th>
+    <th class="text-center">Image</th>
+    <th  class="text-center">Rule</th>
+    <th class="text-center">Description</th>
+  </tr>
+
+  <%= render partial: 'current_badges', collection: @current_badges, as: :badge %>
+  <tbody>
+</table>

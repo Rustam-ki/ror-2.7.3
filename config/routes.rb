@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
              controllers: { sessions: 'sessions' }
-
+  resources :badges, only: :index
   resources :tests, only: :index do
     member do
       post :start
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :gists, only: :create
 
   namespace :admin do
+    resources :badges
     resources :gists, only: :index
     resources :tests do
       patch :update_inline, on: :member

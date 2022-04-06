@@ -5,6 +5,10 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_current_question
 
+  PASSING_SCORE = 85
+
+  scope :successful, -> { where('score >= ?', PASSING_SCORE) }
+
   SUCCESS_RATIO = 85.freeze
 
   def current_question_number

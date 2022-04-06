@@ -1,0 +1,28 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, class: "form-control" %>
+  </p>
+
+  <p>
+    <%= form.label :rule %><br>
+    <%= form.select :rule, Badge::TYPE_BADGES.map  { |type| [ t(type), type ] } %>
+  </p>
+
+  <p>
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :badge_value, class: "form-control" %>
+  </p>
+
+  <p>
+    <%= form.label :option %>
+    <%= form.text_field :option %>
+  </p>
+
+  <p>
+    <%= form.label :image %><br>
+    <%= form.text_field :image, id: :badge_image, class: "form-control" %>
+  </p>
+
+  <p> <%= form.submit %> </p>
+<% end %>
