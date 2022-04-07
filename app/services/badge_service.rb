@@ -11,17 +11,17 @@ class BadgeService
     @badges.select { |badge| send(badge.rule, badge.option) }
   end
 
-
   def category?(category)
-    test_ids = Category.find(category).tests.ids
-    test_passages = @user.test_passages.where(test_id: test_ids)
-    test_passages.all?(&:success?)
+    return false if @test.category.title != category
+
+    test_ids = Test.by_category_title(category).ids
+    test_ids.size == count_tests_success(test_ids)
   end
 
   def madness?(count)
-    return false if @current_test_passages.count != count
+    test_passages = TestPassage.where(user: @user, test: @test, successfull: false).count
 
-    @current_test_passages.none?(&:success?)
+    false if test_passages != count
   end
 
   def cool?
@@ -29,7 +29,10 @@ class BadgeService
   end
 
   def passed_tests_of_level?(level)
-    @current_test_passages.size == Test.where(level: level.to_i).count
+    Test.where(level: level.to_i).count == Test.where(level: level.to_i)
+                                               .joins(:test_passages)
+                                               .where(test_passages: { user: @user, successfull: true })
+                                               .count
   end
 
   def count_tests_success(test_ids)

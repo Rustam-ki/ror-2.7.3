@@ -5,11 +5,9 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_current_question
 
-  PASSING_SCORE = 85
-
-  scope :successful, -> { where('score >= ?', PASSING_SCORE) }
-
   SUCCESS_RATIO = 85.freeze
+
+  scope :successful, -> { where('score >= ?', SUCCESS_RATIO) }
 
   def current_question_number
     test.questions.order(:id).where('id < ?', current_question.id).size + 1

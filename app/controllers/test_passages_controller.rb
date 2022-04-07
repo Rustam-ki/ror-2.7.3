@@ -33,7 +33,7 @@ class TestPassagesController < ApplicationController
   end
   def distribution_badge
     badges = BadgeService.new(@test_passage).call
-    unless badges.empty?
+    if badges.present?
       current_user.badges << badges
       flash[:notice] = I18n.('Поздравляем!')
     end
