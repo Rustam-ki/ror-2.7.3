@@ -7,10 +7,14 @@ class TestPassage < ApplicationRecord
 
   SUCCESS_RATIO = 85.freeze
 
-  scope :successful, -> { where('score >= ?', SUCCESS_RATIO) }
+  scope :successful, -> { where('success_rate >= ?', SUCCESS_RATIO) }
 
   def current_question_number
     test.questions.order(:id).where('id < ?', current_question.id).size + 1
+  end
+
+  def update_successfull
+    update(successfull: true)
   end
 
   def passed?
@@ -36,11 +40,7 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question)
   end
 
-=begin
-  def current_question_number
-    current_question_index + 1
-  end
-=end
+
 
   def percent_of_progress
     (current_question_index.to_f / test.questions.count.to_f * 100).to_i

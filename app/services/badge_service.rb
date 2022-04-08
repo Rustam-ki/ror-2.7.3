@@ -3,7 +3,7 @@ class BadgeService
     @test_passage = test_passage
     @user = test_passage.user
     @test = test_passage.test
-    set_test_passages
+    @current_test_passages = @user.test_passages.where(test: @test)
     @badges = Badge.where.not(id: @user.badges.ids)
   end
 
@@ -29,17 +29,15 @@ class BadgeService
   end
 
   def passed_tests_of_level?(level)
-    Test.where(level: level.to_i).count == Test.where(level: level.to_i)
-                                               .joins(:test_passages)
-                                               .where(test_passages: { user: @user, successfull: true })
-                                               .count
+    sample_tests = Test.where(level: level.to_i).count
+
+    sample_test_passages = count_tests_success(test_ids)
+
+    sample_tests == sample_test_passages
   end
 
   def count_tests_success(test_ids)
     @user.test_passages.where(test_id: test_ids).successful.uniq.count
   end
 
-  def set_test_passages
-    @current_test_passages = @user.test_passages.where(test: @test)
-  end
 end
